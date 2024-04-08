@@ -1,0 +1,118 @@
+body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    font-family: 'Poppins',sans-serif;
+
+}
+header img{
+    margin-right: 50px;
+}
+.navbar img{
+    width: 70px;
+    height: 70px;
+}
+.bg-light{
+    background-color: #e3a344 !important;
+
+}
+
+.form-inline{
+    width: 38%;
+    background-color: white;
+    border-radius: 20px;
+    margin-right: 5px;
+
+}
+.form-inline input{
+    outline: none !important;
+    border: none;
+    transition: none;
+
+}
+.barra{
+    width: 85% !important;
+    border-radius: 20px;
+    font-family: 'Poppins',sans-serif;
+    margin-left: 25px;
+}
+.form-inline .btn{
+    border: none;
+    border-radius: 50%;
+    width: 38px;
+    height: 38px;
+    text-align: center;
+    color: #e3a344;
+}
+.form-inline .btn-outline-success{
+    background-color: #ffffff;
+    margin-left: 10px;
+}
+
+.form-inline .btn-outline-success:hover{
+    color: #f39407;
+}
+.nav-link{
+    color: #ffffff !important;
+    width: 125%;
+    margin-right: 10px;
+} 
+.nav-link i{
+    margin-right: 3px;
+}
+.nav-item{
+    margin-right: 10px;
+}
+.form-inline a{
+    width: 38px !important;
+    height: 38px !important;
+
+}
+.conta{
+    border-radius: 50%;
+    width: 38px !important;
+    height: 38px !important;
+    margin-right: 60px;
+
+    color: #ffffff;
+    border: none;
+}
+.conta:hover{
+    background-color: #ffffff;
+    color: #e3a344;
+    border: none;
+}
+#text{
+    font-size: 16px;
+    text-align: center;
+    font-weight: bolder;
+    text-transform: uppercase;
+    color: white;
+    font-family: 'Poppins',sans-serif;
+    margin-top: 5px;
+}
+.carrinho{
+    display: flex;
+    border-radius: 50%;
+    width: 38px !important;
+    height: 38px !important;
+    margin-right: 270px;
+    color: #ffffff;
+    border: none;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+.carrinho:hover{
+    background-color: #ffffff;
+    color: #e3a344;
+    border: none;
+
+}
+.carrinho #cars{
+    text-decoration: none !important;
+}
+a:hover{
+    text-decoration: none !important;
+}
