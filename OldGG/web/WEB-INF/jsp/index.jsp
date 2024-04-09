@@ -83,6 +83,10 @@
                 <a href="pages/loginecadastro.jsp"><button class="btn btn-outline-success my-2 my-sm-0 conta" ><i class="fa-solid fa-user"></i></button></a>
               </nav>
         </header>
+    <main>
+        <a href="pages/teste.jsp">teste</a>
+    </main>
+    
     </body>
 
     </html>

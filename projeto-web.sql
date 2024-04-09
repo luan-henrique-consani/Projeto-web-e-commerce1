@@ -24,6 +24,7 @@ quantidade INT NOT NULL
 CREATE TABLE Estoque (
 idEstoque INT AUTO_INCREMENT PRIMARY KEY,
 nome_estoque VARCHAR(255) NOT NULL,
+imagem_estoque longblob,
 categoria_estoque VARCHAR(100) NOT NULL,
 preco_estoque DECIMAL(10, 2) NOT NULL,
 quantidade_estoque INT NOT NULL
@@ -32,6 +33,7 @@ quantidade_estoque INT NOT NULL
 CREATE TABLE Carrinho (
 idCarrinho INT AUTO_INCREMENT PRIMARY KEY,
 nome_carrinho VARCHAR(255) NOT NULL,
+imagem_carrinho longblob,
 categoria_carrinho VARCHAR(100) NOT NULL,
 descricao_carrinho TEXT,
 preco_carrinho DECIMAL(10, 2) NOT NULL,
@@ -50,3 +52,5 @@ SET quantidade_estoque = quantidade_estoque - NEW.quantidade_carrinho
 WHERE nome_estoque = NEW.nome_carrinho;
 END$$
 DELIMITER ;
+
+drop database Projeto_Web;
