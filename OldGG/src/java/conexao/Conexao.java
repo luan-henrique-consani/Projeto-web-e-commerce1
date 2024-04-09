@@ -7,29 +7,24 @@ package conexao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.SQLException;
 
-/**
- *
- * @author Senai
- */
 public class Conexao {
-     
-    private static final String url = "jdbc:mysql://localhost:3306/Projeto_Web?useSSL=false";
+
+    private static final String url = "jdbc:mysql://localhost:3306/projeto_web";
     private static final String usuario = "root";
-    private static final String senha = "root";
+    private static final String senha = "";
     private static final String driver = "com.mysql.cj.jdbc.Driver";
-    
-    public static Connection conectar()throws SQLException{
+
+    public static Connection conectar() {
         Connection con = null;
-        try{
+        try {
             Class.forName(driver);
             con = DriverManager.getConnection(url, usuario, senha);
             return con;
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println(e);
             return null;
         }
     }
-    
+
 }

@@ -25,7 +25,7 @@ public class ProdutoDAO {
             Connection conexao = Conexao.conectar();
             PreparedStatement stmt = null;
             
-            stmt = conexao.prepareCall("INSERT INTO produtos(nome, imagem, categoria, descricao, preco, quantidade)VALUES(?,?,?,?,?,?);");
+            stmt = conexao.prepareCall("INSERT INTO produtos(nome, imagem, categoria, descricao, preco, quantidade)VALUES(?,?,?,?,?,?)");
             stmt.setString(1, produto.getNome());
             stmt.setBytes(2, produto.getImagem());
             stmt.setString(3, produto.getCategoria());

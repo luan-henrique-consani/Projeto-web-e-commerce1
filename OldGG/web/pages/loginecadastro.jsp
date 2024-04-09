@@ -33,7 +33,7 @@
                 </div>
                 <div class="inputfield inputTelefone">
                     <i class="fa-solid fa-phone"></i>
-                    <input type="tel" placeholder="00 00000-0000" id="fone" pattern="(?=.*\d[0-9]){2}[0-9]{5}-[0-9]{4}">
+                    <input type="tel" placeholder="00 00000-0000" id="fone" data-inputmask-mask="(99) [9]999-99999" >
                 </div>
                 <div class="inputfield inputCpf">
                     <i class="fa-solid fa-id-card"></i>

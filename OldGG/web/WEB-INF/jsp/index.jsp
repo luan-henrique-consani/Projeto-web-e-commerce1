@@ -96,6 +96,9 @@
             <input type="text"name="preco">
             <h2>quantidade</h2>
             <input type="text" name="quantidade">
+            <h2>descrição</h2>
+            <input type="text" name="descricao">
+            <br>
             <input type="submit" value="Enviar">
         </form>
     </main>

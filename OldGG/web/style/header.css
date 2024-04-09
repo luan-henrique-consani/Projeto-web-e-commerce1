@@ -31,7 +31,7 @@ h2{
 .form-inline input{
     outline: none !important;
     border: none;
-    transition: none;
+    transition: none !important;
 
 }
 .barra{
