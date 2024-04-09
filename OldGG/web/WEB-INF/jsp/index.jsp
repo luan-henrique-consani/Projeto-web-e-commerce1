@@ -84,7 +84,20 @@
               </nav>
         </header>
     <main>
-        <a href="pages/teste.jsp">teste</a>
+                <h2>Enviar Imagem</h2>
+        <form name="frmProduct" action="insert" enctype="multipart/form-data" method="post">
+            <h2>IMAGEM</h2>
+            <input type="file" name="imagem" id="imagem">
+            <h2>nome<h2/>
+            <input type="text" name="nome">
+            <h2>categoria<h2/>
+            <input type="text"name="categoria">
+            <h2>valor<h2/>
+            <input type="text"name="preco">
+            <h2>quantidade</h2>
+            <input type="text" name="quantidade">
+            <input type="submit" value="Enviar">
+        </form>
     </main>
     
     </body>

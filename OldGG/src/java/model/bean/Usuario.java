@@ -20,6 +20,7 @@ public class Usuario {
     public Usuario() {
     }
 
+   
     public Usuario(String nome, String senha, String email, String telefone, String cpf) {
         this.nome = nome;
         this.senha = senha;
@@ -75,7 +76,7 @@ public class Usuario {
     public void setCpf(String cpf) {
         this.cpf = cpf;
     }
-   
+
    
     
 }

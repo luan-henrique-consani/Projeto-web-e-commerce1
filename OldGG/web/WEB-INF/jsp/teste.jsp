@@ -16,6 +16,8 @@
             <input type="text"name="categoria">
             <h2>valor<h2/>
             <input type="text"name="preco">
+            <h2>quantidade</h2>
+            <input type="text" name="quantidade">
             <input type="submit" value="Enviar">
         </form>
     </body>

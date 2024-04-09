@@ -50,6 +50,7 @@ public class Controller extends HttpServlet {
         objProduto.setNome(request.getParameter("nome"));
         objProduto.setCategoria(request.getParameter("categoria"));
         objProduto.setPreco(Float.parseFloat(request.getParameter("preco")));
+        objProduto.setQuantidade(Integer.parseInt(request.getParameter("quantidade")));
         objProduto.setImagem(imageBytes);
         objProdutoDao.create(objProduto);
         response.sendRedirect("index.jsp");

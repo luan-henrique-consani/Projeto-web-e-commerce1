@@ -53,4 +53,5 @@ WHERE nome_estoque = NEW.nome_carrinho;
 END$$
 DELIMITER ;
 
-drop database Projeto_Web;
+select * from produtos;
+insert into produtos(nome, imagem, categoria, preco,quantidade) values ("imagem", 'C:\Users\consa\Downloads\1.png',"mds", 12,1);
