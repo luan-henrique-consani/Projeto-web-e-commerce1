@@ -46,14 +46,14 @@ public class Controller extends HttpServlet {
             outputStream.write(buffer, 0, bytesRead);
         }
         byte[] imageBytes = outputStream.toByteArray();
-
-        objProduto.setNome(request.getParameter("nome"));
+        
         objProduto.setImagem(imageBytes);
+        objProduto.setNome(request.getParameter("nome"));
         objProduto.setCategoria(request.getParameter("categoria"));
-        objProduto.setDescricao(request.getParameter("descricao"));
         objProduto.setPreco(Float.parseFloat(request.getParameter("preco")));
         objProduto.setQuantidade(Integer.parseInt(request.getParameter("quantidade")));
+        objProduto.setDescricao(request.getParameter("descricao"));
         objProdutoDao.create(objProduto);
-        response.sendRedirect("teste.jsp");
+        response.sendRedirect("redirect.jsp");
     }
 }

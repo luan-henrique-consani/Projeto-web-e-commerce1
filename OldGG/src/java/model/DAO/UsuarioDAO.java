@@ -70,7 +70,7 @@ public class UsuarioDAO {
             
             stmt.close();
             conexao.close();
-            JOptionPane.showMessageDialog(null, "Usuario cadastrado com sucesso!");
+            System.out.println("deu certo");
             
         }catch(SQLException e){
             e.printStackTrace();

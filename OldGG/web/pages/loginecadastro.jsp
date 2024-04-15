@@ -18,67 +18,74 @@
 
     <body>
         <a href="./../redirect.jsp" id="voltar"><i class="fa-solid fa-arrow-left"></i></a>
-        <div class="container">
+         <div class="container">
+        <div class="signin-signup">
+            <form class="sign-in-form"  >
+                <h2 class="title">Logar</h2>
+                <div class="input-field">
+                    <i class="fas fa-user"></i>
+                    <input type="text" placeholder="Nome">
+                </div>
+                <div class="input-field">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" placeholder="Senha" pattern="{8,}">
+                </div>
+                <input type="submit" value="Login" class="btn">
 
-            <div class="TelaCadastro">
-                <h2>Bem faça sua conta!</h2>
-                <div class="inputfield inputNome">
-                    <i class="fa-solid fa-user"></i>
-                    <input type="text" placeholder="Seu nome..." id="nome">
+      
+                <p class="account-text">Don't have an account? <a href="#" id="sign-up-btn2">Sign up</a></p>
+            </form>
+            <form  action="criar" class="sign-up-form" enctype="multipart/form-data" method="post">
+                <h2 class="title">Cadastro</h2>
+                <div class="input-field">
+                    <i class="fas fa-user"></i>
+                    <input type="text" placeholder="Nome" name="nome">
                 </div>
-                <div class="inputfield inputEmail">
-                    <i class="fa-regular fa-envelope"></i>
-                    <input type="email" placeholder="Seu email..." id="email"
-                        pattern="[a-z0-9._%+\-]+@gmail.com[a-z0-9.\-]+\.[a-z]{2,}$">
+                <div class="input-field">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" placeholder="Email" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" name="email">
                 </div>
-                <div class="inputfield inputTelefone">
-                    <i class="fa-solid fa-phone"></i>
-                    <input type="tel" placeholder="00 00000-0000" id="fone" data-inputmask-mask="(99) [9]999-99999" >
+                <div class="input-field">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" placeholder="Senha" pattern="{8,}" name="senha">
                 </div>
-                <div class="inputfield inputCpf">
+                <div class="input-field">
                     <i class="fa-solid fa-id-card"></i>
-                    <input type="text" placeholder="000.000.000-00" id="cpf"
-                        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+                    <input type="text" placeholder="CPF"  pattern="[0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2}" id="cpf" name="cpf">
+
                 </div>
-                <div class="inputfield inputSenha">
-                    <i class="fa-solid fa-lock"></i>
-                    <input type="password" placeholder="Seu senha..." id="senha" pattern="{8,}">
+                <div class="input-field">
+                    <i class="fa-solid fa-phone"></i>
+                    <input type="tel" placeholder="Telefone" pattern="[0-9]{2}[0-9]{5}-[0-9]{4}" id="telefone" name="telefone">
                 </div>
-                <button><i class="fa-solid fa-check"></i>Cadastrar</button>
+                <input type="submit" value="Cadastrar" class="btn">
+
+                <p class="account-text">Already have an account? <a href="#" id="sign-in-btn2">Sign in</a></p>
+            </form>
+        </div>
+        <div class="panels-container">
+            <div class="panel left-panel">
+                <div class="content">
+                    <h3>Já tem uma conta?</h3>
+                    <p>Então faça o seu login e entre novamente!</p>
+                    <button class="btn" id="sign-in-btn">Logar</button>
+                </div>
+                <img src="./../assets/logomaior.png" alt="" class="image">
             </div>
-            <div class="TelaLogin">
-                <h2>Bem-vindo de volta!</h2>
-                <div class="inputfield email">
-                    <i class="fa-regular fa-envelope"></i>
-                    <input type="email" placeholder="Seu email..." id="email"
-                        pattern="[a-z0-9._%+\-]+@gmail.com[a-z0-9.\-]+\.[a-z]{2,}$">
+            <div class="panel right-panel">
+                <div class="content">
+                    <h3>Você é novo por aqui?</h3>
+                    <p>Crie sua conta e venha fazer parte da velha guarda do jogos!</p>
+                    <button class="btn" id="sign-up-btn">Cadastrar</button>
                 </div>
-                <div class="inputfield senha">
-                    <i class="fa-solid fa-lock"></i>
-                    <input type="password" id="senha" placeholder="Sua senha..." pattern="{8,}">
-                </div>
-                <button><i class="fa-solid fa-check"></i>Logar</button>
-            </div>
-            <div class="panels-container">
-                <div class="panel panel-left">
-                    <div class="content">
-                        <h3>Você já tem uma conta?</h3>
-                        <p>se caso tenha clique abaixo!</p>
-                        <button class="btn" id="logar">Logar</button>
-                    </div>
-                    <img src="./../assets/1-removebg-preview.png" alt="ogg logo" class="image">
-                </div>
-                <div class="panel panel-right">
-                    <div class="content">
-                        <h3>Você não tem uma conta?</h3>
-                        <p>Crie ela agora mesmo!</p>
-                        <button class="btn" id="cadastrar">Cadastrar</button>
-                    </div>
-                    <img src="./../assets/1-removebg-preview.png" alt="ogg logo" class="image">
-                </div>
+                <img src="./../assets/logomaior.png" alt="" class="image">
             </div>
         </div>
-        <script src="./../js/app.js"></script>
+    </div>
+    <script src="./../js/app.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js"></script>
+    <script src="./../js/mask.js"></script>
     </body>
 
     </html>

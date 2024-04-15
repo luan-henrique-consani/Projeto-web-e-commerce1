@@ -1,8 +1,8 @@
-CREATE DATABASE Projeto_Web;
+CREATE DATABASE projeto_web;
 
-USE Projeto_Web;
+USE projeto_web;
 
-CREATE TABLE Usuario (
+CREATE TABLE usuario (
 idUsuario INT AUTO_INCREMENT PRIMARY KEY,
 nome VARCHAR(255) NOT NULL,
 senha VARCHAR(255) NOT NULL,
@@ -11,7 +11,7 @@ telefone VARCHAR(20) NOT NULL,
 cpf VARCHAR(14) NOT NULL
 );
 
-CREATE TABLE Produtos (
+CREATE TABLE produtos (
 idProdutos INT AUTO_INCREMENT PRIMARY KEY,
 nome VARCHAR(255) NOT NULL,
 imagem longblob,
@@ -21,7 +21,7 @@ preco DECIMAL(10, 2) NOT NULL,
 quantidade INT NOT NULL
 );
 
-CREATE TABLE Estoque (
+CREATE TABLE estoque (
 idEstoque INT AUTO_INCREMENT PRIMARY KEY,
 nome_estoque VARCHAR(255) NOT NULL,
 imagem_estoque longblob,
@@ -30,7 +30,7 @@ preco_estoque DECIMAL(10, 2) NOT NULL,
 quantidade_estoque INT NOT NULL
 );
 
-CREATE TABLE Carrinho (
+CREATE TABLE carrinho (
 idCarrinho INT AUTO_INCREMENT PRIMARY KEY,
 nome_carrinho VARCHAR(255) NOT NULL,
 imagem_carrinho longblob,
@@ -44,14 +44,12 @@ foreign key (idProdutos) references Produtos (idProdutos)
 
 DELIMITER $$
 CREATE TRIGGER tirar_quantidade_estoque
-AFTER INSERT ON Carrinho
+AFTER INSERT ON carrinho
 FOR EACH ROW
 BEGIN
-UPDATE Estoque
+UPDATE estoque
 SET quantidade_estoque = quantidade_estoque - NEW.quantidade_carrinho
 WHERE nome_estoque = NEW.nome_carrinho;
 END$$
 DELIMITER ;
 
-select * from produtos;
-insert into produtos(nome, imagem, categoria, preco,quantidade) values ("imagem", 'C:\Users\consa\Downloads\1.png',"mds", 12,1);
