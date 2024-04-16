@@ -24,7 +24,7 @@ import model.bean.Usuario;
  *
  * @author consa
  */
-@WebServlet(urlPatterns = "/criar")
+@WebServlet(urlPatterns = {"/criar", "/logar"})
 @MultipartConfig
 public class CadasrtoControlller extends HttpServlet {
 
@@ -41,38 +41,63 @@ public class CadasrtoControlller extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        String action = request.getServletPath();
+        if (action.equals("/logar")) {
+            logar(request, response);
+        } else {
+            processRequest(request, response);
+        }
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-                String action = request.getServletPath();
+        String action = request.getServletPath();
         if (action.equals("/criar")) {
-            product(request, response);
+            user(request, response);
+
         }
 
     }
-        protected void product(HttpServletRequest request, HttpServletResponse response)
+
+    protected void user(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        PrintWriter out = response.getWriter();                     
+        PrintWriter out = response.getWriter();
         usuario.setNome(request.getParameter("nome"));
         usuario.setSenha(request.getParameter("senha"));
         usuario.setEmail(request.getParameter("email"));
         usuario.setCpf(request.getParameter("cpf"));
         usuario.setTelefone(request.getParameter("telefone"));
-        if(usuario.getNome().trim().equals("")||usuario.getSenha().trim().equals("")||usuario.getEmail().trim().equals("")||usuario.getCpf().trim().equals("")||usuario.getTelefone().trim().equals("")   ){
+        if (usuario.getNome().trim().equals("") || usuario.getSenha().trim().equals("") || usuario.getEmail().trim().equals("") || usuario.getCpf().trim().equals("") || usuario.getTelefone().trim().equals("")) {
             out.println("<script type=\"text/javascript\">");
             out.println("alert('Por favor, preencha todos os campos.');");
-            out.println("window.location.href = './cadastro-usu';"); 
+            out.println("window.location.href = './cadastro-usu';");
             out.println("</script>");
-        }else{
+        } else {
             usuarioDao.create(usuario);
             response.sendRedirect("./cadastro-usu");
             out.println("<script type=\"text/javascript\">");
             out.println("alert('Cadastro feito com Sucesso!.');");
-            out.println("window.location.href = './cadastro-usu';"); 
+            out.println("window.location.href = './cadastro-usu';");
             out.println("</script>");
         }
+
+    }
+
+    protected void logar(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        PrintWriter out = response.getWriter();
+        usuario.setEmail(request.getParameter("email"));
+        usuario.setSenha(request.getParameter("senha"));
+        if (usuario.getEmail().trim().equals("")||usuario.getSenha().trim().equals("")) {
+            out.println("<script type=\"text/javascript\">");
+            out.println("alert('Por favor, preencha todos os campos.');");
+            out.println("window.location.href = './cadastro-usu';");
+            out.println("</script>");
+        } else {
+           response.sendRedirect("redirect.jsp");
+
+        }
+
     }
 }

@@ -19,23 +19,23 @@
     <body>
         <a href="./redirect.jsp" id="voltar"><i class="fa-solid fa-arrow-left"></i></a>
          <div class="container">
-        <div class="signin-signup">
-            <form class="sign-in-form"  >
+        <div  class="signin-signup" >
+            <form action="logar" class="sign-in-form" enctype="multipart/form-data" method="get" >
                 <h2 class="title">Logar</h2>
                 <div class="input-field">
                     <i class="fas fa-user"></i>
-                    <input type="text" placeholder="Nome">
+                    <input type="email" placeholder="Email" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" name="email">
                 </div>
                 <div class="input-field">
                     <i class="fas fa-lock"></i>
-                    <input type="password" placeholder="Senha" pattern="{8,}">
+                    <input type="password" placeholder="Senha" pattern="{8,}" name="senha">
                 </div>
                 <input type="submit" value="Login" class="btn">
 
       
                 <p class="account-text">Don't have an account? <a href="#" id="sign-up-btn2">Sign up</a></p>
             </form>
-            <form  action="./criar" class="sign-up-form" enctype="multipart/form-data" method="post">
+            <form  action="criar" class="sign-up-form" enctype="multipart/form-data" method="post">
                 <h2 class="title">Cadastro</h2>
                 <div class="input-field">
                     <i class="fas fa-user"></i>

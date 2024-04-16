@@ -36,8 +36,6 @@ public class UsuarioDAO {
             if(rs.next()){
                 Usuario.setIdUsuario(rs.getInt("idUsuario"));
                 System.out.println("DAO: "+Usuario.getIdUsuario());
-            }else{
-                JOptionPane.showMessageDialog(null, "esse usuario e/ou senha não existem!");
             }
             
             
