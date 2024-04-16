@@ -33,7 +33,7 @@
                 <input type="submit" value="Login" class="btn">
 
       
-                <p class="account-text">Don't have an account? <a href="#" id="sign-up-btn2">Sign up</a></p>
+                <p class="account-text">Não tem uma conta? <a href="#" id="sign-up-btn2">Cadastrar</a></p>
             </form>
             <form  action="criar" class="sign-up-form" enctype="multipart/form-data" method="post">
                 <h2 class="title">Cadastro</h2>

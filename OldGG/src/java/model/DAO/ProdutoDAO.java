@@ -50,7 +50,7 @@ public class ProdutoDAO {
             PreparedStatement stmt = null;
             ResultSet rs = null;
             
-            stmt = conexao.prepareCall("SELECT * FROM produtos");
+            stmt = conexao.prepareStatement("SELECT * FROM produtos");
             
             while(rs.next()){
                 Produto prt = new Produto();

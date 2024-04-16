@@ -75,11 +75,7 @@ public class CadasrtoControlller extends HttpServlet {
             out.println("</script>");
         } else {
             usuarioDao.create(usuario);
-            response.sendRedirect("./cadastro-usu");
-            out.println("<script type=\"text/javascript\">");
-            out.println("alert('Cadastro feito com Sucesso!.');");
-            out.println("window.location.href = './cadastro-usu';");
-            out.println("</script>");
+            response.sendRedirect("/pages/loginecadastro.jsp");
         }
 
     }
@@ -95,6 +91,7 @@ public class CadasrtoControlller extends HttpServlet {
             out.println("window.location.href = './cadastro-usu';");
             out.println("</script>");
         } else {
+           usuarioDao.logar(usuario);
            response.sendRedirect("redirect.jsp");
 
         }

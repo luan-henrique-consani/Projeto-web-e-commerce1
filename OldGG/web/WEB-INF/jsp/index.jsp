@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8" %>
     <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
@@ -25,6 +26,7 @@
             integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
             crossorigin="anonymous"></script>
             <link rel="stylesheet" href="style/header.css"> 
+            <link rel="stylesheet" href="style/main.css">
     </head>
 
     <body>
@@ -84,23 +86,41 @@
               </nav>
         </header>
     <main>
-                <h2>Enviar Imagem</h2>
-        <form name="frmProduct" action="insert" enctype="multipart/form-data" method="post">
-            <h2>IMAGEM</h2>
-            <input type="file" name="imagem" id="imagem">
-            <h2>nome<h2/>
-            <input type="text" name="nome">
-            <h2>categoria<h2/>
-            <input type="text"name="categoria">
-            <h2>valor<h2/>
-            <input type="text"name="preco">
-            <h2>quantidade</h2>
-            <input type="text" name="quantidade">
-            <h2>descrição</h2>
-            <input type="text" name="descricao">
-            <br>
-            <input type="submit" value="Enviar">
-        </form>
+
+        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class="d-block w-100" src="assets/1.png" alt="Primeiro Slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="assets/2.png" alt="Segundo Slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="assets/3.png" alt="Terceiro Slide">
+    </div>
+          <div class="carousel-item">
+      <img class="d-block w-100" src="assets/4.png" alt="Terceiro Slide">
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Anterior</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Próximo</span>
+  </a>
+</div>
+        <div class="container">
+          <c:forEach items="${produtos}" var="produto" >
+              <div id="${produto.idProdutos}">
+                  <h2>${produto.nome}</h2>
+                  <p>${produto.imagem}</p>
+                  <p>${produto.categoria}</p>
+                  <p>${produto.preco}</p>
+              </div>
+          </c:forEach>
+      </div>
     </main>
     
     </body>
