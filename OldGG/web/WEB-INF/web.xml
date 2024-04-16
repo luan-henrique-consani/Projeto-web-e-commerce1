@@ -30,7 +30,7 @@
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>CadasrtoControlller</servlet-name>
-        <url-pattern>/cadasrto-usu</url-pattern>
+        <url-pattern>/cadastro-usu</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

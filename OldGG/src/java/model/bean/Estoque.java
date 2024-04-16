@@ -14,7 +14,7 @@ import java.sql.Blob;
 public class Estoque {
     private int idEstoque;
     private String nomeEstoque;
-    private Blob imagemEstoque;
+    private byte [] imagemEstoque;
     private String categoriaEstoque;
     private float precoEstoque;
     private int quantidadeEstoque;
@@ -22,7 +22,7 @@ public class Estoque {
     public Estoque() {
     }
 
-    public Estoque(int idEstoque, String nomeEstoque, Blob imagemEstoque, String categoriaEstoque, float precoEstoque, int quantidadeEstoque) {
+    public Estoque(int idEstoque, String nomeEstoque, byte[] imagemEstoque, String categoriaEstoque, float precoEstoque, int quantidadeEstoque) {
         this.idEstoque = idEstoque;
         this.nomeEstoque = nomeEstoque;
         this.imagemEstoque = imagemEstoque;
@@ -47,11 +47,11 @@ public class Estoque {
         this.nomeEstoque = nomeEstoque;
     }
 
-    public Blob getImagemEstoque() {
+    public byte[] getImagemEstoque() {
         return imagemEstoque;
     }
 
-    public void setImagemEstoque(Blob imagemEstoque) {
+    public void setImagemEstoque(byte[] imagemEstoque) {
         this.imagemEstoque = imagemEstoque;
     }
 
@@ -78,7 +78,7 @@ public class Estoque {
     public void setQuantidadeEstoque(int quantidadeEstoque) {
         this.quantidadeEstoque = quantidadeEstoque;
     }
-    
-    
+
+
     
 }

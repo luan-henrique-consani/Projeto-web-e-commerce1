@@ -3,6 +3,7 @@ package controller;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
@@ -37,6 +38,7 @@ public class Controller extends HttpServlet {
 
     protected void product(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        PrintWriter out = response.getWriter();
         Part filePart = request.getPart("imagem");
         InputStream inputStream = filePart.getInputStream();
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
@@ -54,6 +56,12 @@ public class Controller extends HttpServlet {
         objProduto.setQuantidade(Integer.parseInt(request.getParameter("quantidade")));
         objProduto.setDescricao(request.getParameter("descricao"));
         objProdutoDao.create(objProduto);
+
+            
+        out.println("<script type=\"text/javascript\">");
+        out.println("alert('Cadastro feito com Sucesso!.');");
+        out.println("window.location.href = './cadastro-usu';"); 
+        out.println("</script>");
         response.sendRedirect("redirect.jsp");
     }
 }

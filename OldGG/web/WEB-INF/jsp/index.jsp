@@ -80,7 +80,7 @@
 
                   </form>
                 </div>
-                <a href="pages/loginecadastro.jsp"><button class="btn btn-outline-success my-2 my-sm-0 conta" ><i class="fa-solid fa-user"></i></button></a>
+                <a href="./cadastro-usu"><button class="btn btn-outline-success my-2 my-sm-0 conta" ><i class="fa-solid fa-user"></i></button></a>
               </nav>
         </header>
     <main>

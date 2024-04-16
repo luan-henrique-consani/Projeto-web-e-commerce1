@@ -14,7 +14,7 @@ import java.sql.Blob;
 public class Carrinho {
     private int idCarrinho;
     private String nomeCarrinho;
-    private Blob imagemCarrinho;
+    private byte[] imagemCarrinho;
     private String categoriaCarrinho;
     private String descricaoCarrinho;
     private float precoCarrinho;
@@ -24,7 +24,7 @@ public class Carrinho {
     public Carrinho() {
     }
 
-    public Carrinho(int idCarrinho, String nomeCarrinho, Blob imagemCarrinho, String categoriaCarrinho, String descricaoCarrinho, float precoCarrinho, int quantidadeCarrinho, int idProdutos) {
+    public Carrinho(int idCarrinho, String nomeCarrinho, byte[] imagemCarrinho, String categoriaCarrinho, String descricaoCarrinho, float precoCarrinho, int quantidadeCarrinho, int idProdutos) {
         this.idCarrinho = idCarrinho;
         this.nomeCarrinho = nomeCarrinho;
         this.imagemCarrinho = imagemCarrinho;
@@ -51,11 +51,11 @@ public class Carrinho {
         this.nomeCarrinho = nomeCarrinho;
     }
 
-    public Blob getImagemCarrinho() {
+    public byte[] getImagemCarrinho() {
         return imagemCarrinho;
     }
 
-    public void setImagemCarrinho(Blob imagemCarrinho) {
+    public void setImagemCarrinho(byte[] imagemCarrinho) {
         this.imagemCarrinho = imagemCarrinho;
     }
 
@@ -98,6 +98,7 @@ public class Carrinho {
     public void setIdProdutos(int idProdutos) {
         this.idProdutos = idProdutos;
     }
+
     
     
 }
