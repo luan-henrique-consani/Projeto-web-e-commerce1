@@ -111,11 +111,29 @@
     <span class="sr-only">Próximo</span>
   </a>
 </div>
+                <h2>Enviar Imagem</h2>
+        <form name="frmProduct" action="insert" enctype="multipart/form-data" method="post">
+            <h2>IMAGEM</h2>
+            <input type="file" name="imagem" id="imagem">
+            <h2>nome<h2/>
+                <input type="text" name="nome">
+                <h2>categoria<h2/>
+                    <input type="text"name="categoria">
+                    <h2>valor<h2/>
+                        <input type="text"name="preco">
+                        <h2>quantidade</h2>
+                        <input type="text" name="quantidade">
+                        <h2>descrição</h2>
+                        <input type="text" name="descricao">
+                        <br>
+                        <input type="submit" value="Enviar">
+                        </form>
+        
         <div class="container">
           <c:forEach items="${produtos}" var="produto" >
               <div id="${produto.idProdutos}">
                   <h2>${produto.nome}</h2>
-                  <p>${produto.imagem}</p>
+                  <img src="${produto.imagem}" alt="${produto.nome}">
                   <p>${produto.categoria}</p>
                   <p>${produto.preco}</p>
               </div>

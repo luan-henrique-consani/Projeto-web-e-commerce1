@@ -55,7 +55,8 @@ public class CadasrtoControlller extends HttpServlet {
         String action = request.getServletPath();
         if (action.equals("/criar")) {
             user(request, response);
-
+        }else{
+            processRequest(request, response);
         }
 
     }
@@ -75,7 +76,7 @@ public class CadasrtoControlller extends HttpServlet {
             out.println("</script>");
         } else {
             usuarioDao.create(usuario);
-            response.sendRedirect("/pages/loginecadastro.jsp");
+            response.sendRedirect("./cadastro-usu");
         }
 
     }
@@ -92,7 +93,7 @@ public class CadasrtoControlller extends HttpServlet {
             out.println("</script>");
         } else {
            usuarioDao.logar(usuario);
-           response.sendRedirect("redirect.jsp");
+           response.sendRedirect("./home");
 
         }
 

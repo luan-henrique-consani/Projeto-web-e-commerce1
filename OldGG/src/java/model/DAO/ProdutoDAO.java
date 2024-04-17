@@ -51,7 +51,7 @@ public class ProdutoDAO {
             ResultSet rs = null;
             
             stmt = conexao.prepareStatement("SELECT * FROM produtos");
-            
+            rs = stmt.executeQuery();
             while(rs.next()){
                 Produto prt = new Produto();
                 prt.setIdProdutos(rs.getInt("idProdutos"));

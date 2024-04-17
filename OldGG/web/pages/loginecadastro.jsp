@@ -47,7 +47,7 @@
                 </div>
                 <div class="input-field">
                     <i class="fas fa-lock"></i>
-                    <input type="password" placeholder="Senha" pattern="{8,}" name="senha">
+                    <input type="password" placeholder="Senha" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="precisa conter 8 caracteres e pelo menos 1 letra miniscula 1 maiuscula e 1 caracter especial" name="senha">
                 </div>
                 <div class="input-field">
                     <i class="fa-solid fa-id-card"></i>
