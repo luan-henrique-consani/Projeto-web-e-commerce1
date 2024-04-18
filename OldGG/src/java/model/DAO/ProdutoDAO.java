@@ -73,7 +73,7 @@ public class ProdutoDAO {
         }
         return produto;
 }
-        public List<Produto> leia1(){
+        public List<Produto> leia1(int id){
         List<Produto> produto = new ArrayList<>();
         try{
             Connection conexao = Conexao.conectar();
@@ -81,7 +81,7 @@ public class ProdutoDAO {
             ResultSet rs = null;
             
             stmt = conexao.prepareStatement("SELECT * FROM produtos WHERE idProdutos = ?");
-            
+            stmt.setInt(1, id);
             rs = stmt.executeQuery();
             while(rs.next()){
                 Produto prt = new Produto();

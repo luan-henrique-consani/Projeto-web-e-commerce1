@@ -1,7 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
     <%@page contentType="text/html" pageEncoding="UTF-8" %>
         <%@ page import="model.bean.Produto" %>
-            <%@ page import="model.dao.ProdutoDAO" %>
+            <%@ page import="model.DAO.ProdutoDAO" %>
                 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
                 <html>
@@ -47,7 +47,7 @@
                             <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
                                 <ul class="navbar-nav mr-auto">
                                     <li class="nav-item active">
-                                        <a class="nav-link" href="#"><i class="fa-solid fa-house"></i>Home<span
+                                        <a class="nav-link" href="./home"><i class="fa-solid fa-house"></i>Home<span
                                                 class="sr-only">(pÃ¡gina atual)</span></a>
                                     </li>
                                     <li class="nav-item dropdown">
@@ -100,17 +100,15 @@
                         </nav>
                     </header>
                     <main>
-                        <% String produtoID=request.getParameter("produtoID"); Produto
-                            produtoEspecifico=ProdutoDAO.leia1(produtoID); %>
-
-                            <div id="${produtoEspecifico.idProdutos}" class="produto">
-                                <h2>${produtoEspecifico.nome}</h2>
-                                <img src="data:image/png;base64,${produtoEspecifico.imagemBase64}"
-                                    alt="${produtoEspecifico.nome}">
-                                <p>R$ ${produtoEspecifico.preco}</p>
-                                <a href=""><input type="submit" value="comprar"></a>
-                            </div>
-                    </div>
+                                <div class="container">
+          <c:forEach items="${produtos}" var="produto" >
+              <div id="${produto.idProdutos}" class="produto">
+                  <h2>${produto.nome}</h2>
+                  <img src="data:image/png;base64,${produto.imagemBase64}"  alt="${produto.nome}">
+                  <p>R$ ${produto.preco}</p>
+                  <a href="#"><input type="submit" value="comprar"></a>
+              </div>
+          </c:forEach>
             </main>
     </body>
 </html>
