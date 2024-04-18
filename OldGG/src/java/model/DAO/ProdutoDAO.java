@@ -73,5 +73,36 @@ public class ProdutoDAO {
         }
         return produto;
 }
+        public List<Produto> leia1(){
+        List<Produto> produto = new ArrayList<>();
+        try{
+            Connection conexao = Conexao.conectar();
+            PreparedStatement stmt = null;
+            ResultSet rs = null;
+            
+            stmt = conexao.prepareStatement("SELECT * FROM produtos WHERE idProdutos = ?");
+            
+            rs = stmt.executeQuery();
+            while(rs.next()){
+                Produto prt = new Produto();
+                prt.setIdProdutos(rs.getInt("idProdutos"));
+                prt.setNome(rs.getString("nome"));
+                prt.setImagem(rs.getBytes("imagem"));
+                prt.setCategoria(rs.getString("categoria"));
+                prt.setDescricao(rs.getString("descricao"));
+                prt.setPreco(rs.getFloat("preco"));
+                prt.setQuantidade(rs.getInt("quantidade"));
+                produto.add(prt);
+            }
+            
+            rs.close();
+            stmt.close();
+            conexao.close();
+            
+        }catch(SQLException e){
+            e.printStackTrace();
+        }
+        return produto;
+}
     
 }
