@@ -49,7 +49,7 @@
                         <i class="fa-solid fa-gamepad"></i>Consoles
                       </a>
                       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Nintendo</a>
+                        <a class="dropdown-item" href="./cadastroProdutos">Nintendo</a>
                         <a class="dropdown-item" href="#">PlayStation</a>
                         <a href="#" class="dropdown-item">Xbox</a>
                       <li class="nav-item dropdown">
@@ -111,31 +111,14 @@
     <span class="sr-only">Próximo</span>
   </a>
 </div>
-                <h2>Enviar Imagem</h2>
-        <form name="frmProduct" action="insert" enctype="multipart/form-data" method="post">
-            <h2>IMAGEM</h2>
-            <input type="file" name="imagem" id="imagem">
-            <h2>nome<h2/>
-                <input type="text" name="nome">
-                <h2>categoria<h2/>
-                    <input type="text"name="categoria">
-                    <h2>valor<h2/>
-                        <input type="text"name="preco">
-                        <h2>quantidade</h2>
-                        <input type="text" name="quantidade">
-                        <h2>descrição</h2>
-                        <input type="text" name="descricao">
-                        <br>
-                        <input type="submit" value="Enviar">
-                        </form>
         
         <div class="container">
           <c:forEach items="${produtos}" var="produto" >
-              <div id="${produto.idProdutos}">
+              <div id="${produto.idProdutos}" class="produto">
                   <h2>${produto.nome}</h2>
-                  <img src="${produto.imagem}" alt="${produto.nome}">
-                  <p>${produto.categoria}</p>
-                  <p>${produto.preco}</p>
+                  <img src="data:image/png;base64,${produto.imagemBase64}"  alt="${produto.nome}">
+                  <p>R$ ${produto.preco}</p>
+                  <a href=""><input type="submit" value="comprar"></a>
               </div>
           </c:forEach>
       </div>

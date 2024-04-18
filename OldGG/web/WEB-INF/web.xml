@@ -24,6 +24,10 @@
         <servlet-name>ProdutosController</servlet-name>
         <servlet-class>controller.ProdutosController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>CadastroProdutosController</servlet-name>
+        <servlet-class>controller.CadastroProdutosController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ProdutosController</servlet-name>
         <url-pattern>/home</url-pattern>
@@ -36,8 +40,10 @@
         <servlet-name>CadasrtoControlller</servlet-name>
         <url-pattern>/cadastro-usu</url-pattern>
     </servlet-mapping>
-
-
+    <servlet-mapping>
+        <servlet-name>CadastroProdutosController</servlet-name>
+        <url-pattern>/cadastroProdutos</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30

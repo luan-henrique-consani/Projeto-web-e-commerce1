@@ -6,6 +6,7 @@
 package model.bean;
 
 import java.sql.Blob;
+import java.util.Base64;
 
 /**
  *
@@ -21,6 +22,13 @@ public class Produto {
     private int quantidade;
 
     public Produto() {
+    }
+        public String getImagemBase64() {
+        if (imagem != null) {
+            return Base64.getEncoder().encodeToString(imagem);
+        } else {
+            return "";
+        }
     }
 
     public Produto(int idProdutos, String nome, byte[] imagem, String categoria, String descricao, float preco, int quantidade) {

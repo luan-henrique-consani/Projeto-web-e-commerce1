@@ -19,6 +19,8 @@ public class Usuario {
 
     public Usuario() {
     }
+    
+    
 
    
     public Usuario(String nome, String senha, String email, String telefone, String cpf) {

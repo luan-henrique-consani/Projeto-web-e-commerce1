@@ -22,7 +22,8 @@ h2{
 }
 
 .form-inline{
-    width: 38%;
+    width: 35%;
+
     background-color: white;
     border-radius: 20px;
     margin-right: 5px;
@@ -35,10 +36,10 @@ h2{
 
 }
 .barra{
-    width: 85% !important;
+    width: 80% !important;
     border-radius: 20px;
     font-family: 'Poppins',sans-serif;
-    margin-left: 25px;
+    margin-left: 10px;
 }
 .form-inline .btn{
     border: none;
