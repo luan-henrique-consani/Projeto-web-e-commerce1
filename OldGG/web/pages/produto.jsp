@@ -30,6 +30,8 @@
                         integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
                         crossorigin="anonymous"></script>
                     <link rel="stylesheet" href="style/header.css">
+                    <link rel="stylesheet" href="style/produto.css">
+                    <link rel="stylesheet" href="style/footer.css">
                 </head>
 
                 <body>
@@ -73,7 +75,7 @@
                                     <li class="nav-item dropdown">
                                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <i class="fa-solid fa-headset"></i>AcessÃ³rios
+                                            <i class="fa-solid fa-headset"></i>Acessórios
                                         </a>
                                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                             <a class="dropdown-item" href="#">HeadSet</a>
@@ -95,7 +97,7 @@
 
                                 </form>
                             </div>
-                            <a href="./cadastro-usu"><button class="btn btn-outline-success my-2 my-sm-0 conta"><i
+                            <a href="./cadastro-usu" id="user"><button class="btn btn-outline-success my-2 my-sm-0 conta"><i
                                         class="fa-solid fa-user"></i></button></a>
                         </nav>
                     </header>
@@ -104,11 +106,21 @@
           <c:forEach items="${produtos}" var="produto" >
               <div id="${produto.idProdutos}" class="produto">
                   <h2>${produto.nome}</h2>
-                  <img src="data:image/png;base64,${produto.imagemBase64}"  alt="${produto.nome}">
-                  <p>R$ ${produto.preco}</p>
-                  <a href="#"><input type="submit" value="comprar"></a>
+                  <img src="data:image/png;base64,${produto.imagemBase64}"  alt="${produto.nome}" id="imgPrt">
+                  <p id="preco">R$ ${produto.preco}</p>
+                  <a href="#" id="comprar"><button type="submit" ><i class="fa-solid fa-basket-shopping"></i>comprar</button></a>
+                  <p id="desc">${produto.descricao}</p>
               </div>
           </c:forEach>
             </main>
+            <footer>
+                <div class="redes">
+                  <a  href="https://www.instagram.com/luanconsani28/" class="btn btn-outline-succes my-2 my-sm-1 redes2" type="submit"><i class="fa-brands fa-instagram"></i></a>
+                  <a  href="https://wa.me/5543991504447?text=Fala+com+pai" class="btn btn-outline-succes my-2 my-sm-1 redes2" type="submit"><i class="fa-brands fa-whatsapp"></i></a>
+                  <a  href="https://www.linkedin.com/in/luan-henrique-consani-coelho-b9b66a219/" class="btn btn-outline-succes my-2 my-sm-1 redes2" type="submit"><i class="fa-brands fa-linkedin"></i></a> 
+                  
+                </div>
+                <p>Todos direitos reservados a Luan Consani&copy;</p>
+              </footer>
     </body>
 </html>

@@ -52,4 +52,4 @@ SET quantidade_estoque = quantidade_estoque - NEW.quantidade_carrinho
 WHERE nome_estoque = NEW.nome_carrinho;
 END$$
 DELIMITER ;
-select * from produtos;
+drop database projeto_web;

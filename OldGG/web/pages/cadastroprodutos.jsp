@@ -27,7 +27,7 @@
                 integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
         <link rel="stylesheet" href="style/header.css">
-        <link rel="stylesheet" href="style/main.css">
+
     </head>
 
     <body>
