@@ -31,71 +31,40 @@
     </head>
 
     <body>
-    <header>
+      <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand" href="#"></a>
             <img src="assets/logomaior.png" alt="">
             <h2 id="text">Old Games Generation</h2>
-            <button class="navbar-toggler" type="button" data-toggle="collapse"
-                    data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado"
-                    aria-expanded="false" aria-label="Alterna navegação">
-                <span class="navbar-toggler-icon"></span>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
+              <span class="navbar-toggler-icon"></span>
             </button>
-
+          
             <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="./home"><i class="fa-solid fa-house"></i>Home<span
-                                class="sr-only">(página atual)</span></a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="fa-solid fa-gamepad"></i>Consoles
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Nintendo</a>
-                            <a class="dropdown-item" href="#">PlayStation</a>
-                            <a href="#" class="dropdown-item">Xbox</a>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <i class="fa-solid fa-person-walking"></i>Action figure
-                                </a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="#">Pop</a>
-                                    <a class="dropdown-item" href="#">Super Mario</a>
-                                    <a class="dropdown-item" href="#">Sonic</a>
-                                    <a class="dropdown-item" href="#">Animes</a>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <i class="fa-solid fa-headset"></i>Acessórios
-                                </a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="#">HeadSet</a>
-                                    <a class="dropdown-item" href="#">Microfone</a>
-                                    <a class="dropdown-item" href="#">Mouse</a>
-                                    <a class="dropdown-item" href="#">Teclado</a>
-                            </li>
-                    </li>
-                </ul>
-                <a href="pages/loginecadastro.jsp" id="cars"><button
-                        class="btn btn-outline-success my-2 my-sm-0 carrinho"><i
-                            class="fa-solid fa-cart-shopping"></i></button></a>
-                <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2 barra" type="search" placeholder="Pesquisar"
-                           aria-label="Pesquisar">
-                    <button class="btn btn-outline-success my-2 my-sm-0 lupa" type="submit"><i
-                            class="fa-solid fa-magnifying-glass"></i></button>
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="./home"><i class="fa-solid fa-house"></i>Home<span class="sr-only">(página atual)</span></a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="./produto-categoria?name=Consoles"> <i class="fa-solid fa-gamepad"></i>Consoles</a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="./produto-categoria?name=Action Figure"><i class="fa-solid fa-person-walking"></i>Action figure</a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="./produto-categoria?name=Acessorios"> <i class="fa-solid fa-headset"></i>Acessórios</a>
+                </li>
+              </ul>
+              <a href="pages/loginecadastro.jsp" id="cars"><button class="btn btn-outline-success my-2 my-sm-0 carrinho" ><i class="fa-solid fa-cart-shopping"></i></button></a>
+              <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2 barra" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
+                <button class="btn btn-outline-success my-2 my-sm-0 lupa" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
 
 
-                </form>
+              </form>
             </div>
-            <a href="./cadastro-usu"><button class="btn btn-outline-success my-2 my-sm-0 conta"><i
-                        class="fa-solid fa-user"></i></button></a>
-        </nav>
+            <a href="./cadastro-usu" id="user"><button class="btn btn-outline-success my-2 my-sm-0 conta" ><i class="fa-solid fa-user"></i></button></a>
+          </nav>
     </header>
     <main>
         <h2>Cadastrar produtos!</h2>

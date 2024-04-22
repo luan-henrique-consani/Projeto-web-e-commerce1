@@ -14,22 +14,21 @@ import java.util.ArrayList;
 import java.util.List;
 import model.bean.Carrinho;
 
-
 /**
  *
  * @author Senai
  */
 public class CarrinhoDAO {
-    
-        public List<Carrinho> leia(){
+
+    public List<Carrinho> leia() {
         List<Carrinho> carrinho = new ArrayList<>();
-        try{
+        try {
             Connection conexao = Conexao.conectar();
             PreparedStatement stmt = null;
             ResultSet rs = null;
-            
-            stmt = conexao.prepareCall("SELECT * FROM produtos;");
-            while(rs.next()){
+
+            stmt = conexao.prepareCall("SELECT * FROM carrinho;");
+            while (rs.next()) {
                 Carrinho cro = new Carrinho();
                 cro.setIdCarrinho(rs.getInt("idCarrinho"));
                 cro.setNomeCarrinho(rs.getString("nome_carrinho"));
@@ -41,14 +40,34 @@ public class CarrinhoDAO {
                 cro.setIdProdutos(rs.getInt("idProdutos"));
                 carrinho.add(cro);
             }
-            
+
             rs.close();
             stmt.close();
             conexao.close();
-            
-        }catch(SQLException e){
+
+        } catch (SQLException e) {
             e.printStackTrace();
         }
         return carrinho;
-}
+    }
+
+    public void create(Carrinho carrinho) {
+        try {
+            Connection conexao = Conexao.conectar();
+            PreparedStatement stmt = null;
+
+            stmt = conexao.prepareStatement("INSERT INTO carrinho(nome_carrinho, imagem_carrinho, descricao_carrinho, preco_carrinho)VALUES(?,?,?,?)");
+            stmt.setString(1, carrinho.getNomeCarrinho());
+            stmt.setBytes(2, carrinho.getImagemCarrinho());
+            stmt.setString(3, carrinho.getDescricaoCarrinho());
+            stmt.setFloat(4, carrinho.getPrecoCarrinho());
+            stmt.executeUpdate();
+
+            stmt.close();
+            conexao.close();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 }

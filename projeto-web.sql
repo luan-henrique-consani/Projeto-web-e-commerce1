@@ -52,4 +52,5 @@ SET quantidade_estoque = quantidade_estoque - NEW.quantidade_carrinho
 WHERE nome_estoque = NEW.nome_carrinho;
 END$$
 DELIMITER ;
-drop database projeto_web;
+
+insert into usuario(nome, senha, email, telefone, cpf) values('Admin','Admin1234','adm@gmail.com','43 91234-567','123.456.789-10');

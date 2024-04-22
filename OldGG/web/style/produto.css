@@ -6,13 +6,16 @@ main{
     display: grid;
     place-items: center;
 }
+.container{
+    margin: 30px 0 0 0;
+}
 .produto{
     display: grid;
     grid-template-areas: 
     "img h2 preco"
     "img desc cpr"
-    "img  desc ."
-;
+    "img  desc .";
+
 }
 h2{
     grid-area: h2;
@@ -20,6 +23,7 @@ h2{
 }
 #desc{
     grid-area: desc;
+    font-size: 15px;
 }
 #imgPrt{
     grid-area: img;
@@ -37,21 +41,19 @@ h2{
     margin-left: 20px;
     width: 220px;
     height: 40px;
-}
-#comprar button{
-    width: 220px;
-    height: 40px;
     border-radius: 20px;
     border: none;
     background-color: #dfa44a;
     color: white;
     transition: all 0.3s ease-in-out 0.1s;
 }
-#comprar button:hover{
+
+#comprar:hover{
     background-color: #ffffff;
     color: #dfa44a;
     border: 2px solid #dfa44a;
 }
 #comprar i{
     margin-right: 5px;
+
 }

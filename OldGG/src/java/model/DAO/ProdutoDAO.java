@@ -19,12 +19,12 @@ import model.bean.Produto;
  * @author consa
  */
 public class ProdutoDAO {
-    
-    public void create(Produto produto){
-        try{
+
+    public void create(Produto produto) {
+        try {
             Connection conexao = Conexao.conectar();
             PreparedStatement stmt = null;
-            
+
             stmt = conexao.prepareStatement("INSERT INTO produtos(nome, imagem, categoria, descricao, preco, quantidade)VALUES(?,?,?,?,?,?)");
             stmt.setString(1, produto.getNome());
             stmt.setBytes(2, produto.getImagem());
@@ -32,27 +32,27 @@ public class ProdutoDAO {
             stmt.setString(4, produto.getDescricao());
             stmt.setFloat(5, produto.getPreco());
             stmt.setInt(6, produto.getQuantidade());
-            
+
             stmt.executeUpdate();
-            
+
             stmt.close();
             conexao.close();
-            
-        }catch(SQLException e){
+
+        } catch (SQLException e) {
             e.printStackTrace();
         }
     }
-    
-    public List<Produto> leia(){
+
+    public List<Produto> leia() {
         List<Produto> produto = new ArrayList<>();
-        try{
+        try {
             Connection conexao = Conexao.conectar();
             PreparedStatement stmt = null;
             ResultSet rs = null;
-            
+
             stmt = conexao.prepareStatement("SELECT * FROM produtos");
             rs = stmt.executeQuery();
-            while(rs.next()){
+            while (rs.next()) {
                 Produto prt = new Produto();
                 prt.setIdProdutos(rs.getInt("idProdutos"));
                 prt.setNome(rs.getString("nome"));
@@ -63,27 +63,28 @@ public class ProdutoDAO {
                 prt.setQuantidade(rs.getInt("quantidade"));
                 produto.add(prt);
             }
-            
+
             rs.close();
             stmt.close();
             conexao.close();
-            
-        }catch(SQLException e){
+
+        } catch (SQLException e) {
             e.printStackTrace();
         }
         return produto;
-}
-        public List<Produto> leia1(int id){
+    }
+
+    public List<Produto> leia1(int id) {
         List<Produto> produto = new ArrayList<>();
-        try{
+        try {
             Connection conexao = Conexao.conectar();
             PreparedStatement stmt = null;
             ResultSet rs = null;
-            
+
             stmt = conexao.prepareStatement("SELECT * FROM produtos WHERE idProdutos = ?");
             stmt.setInt(1, id);
             rs = stmt.executeQuery();
-            while(rs.next()){
+            while (rs.next()) {
                 Produto prt = new Produto();
                 prt.setIdProdutos(rs.getInt("idProdutos"));
                 prt.setNome(rs.getString("nome"));
@@ -94,15 +95,47 @@ public class ProdutoDAO {
                 prt.setQuantidade(rs.getInt("quantidade"));
                 produto.add(prt);
             }
-            
+
             rs.close();
             stmt.close();
             conexao.close();
-            
-        }catch(SQLException e){
+
+        } catch (SQLException e) {
             e.printStackTrace();
         }
         return produto;
-}
-    
+    }
+
+    public List<Produto> leia2(String categoria) {
+        List<Produto> produto = new ArrayList<>();
+        try {
+            Connection conexao = Conexao.conectar();
+            PreparedStatement stmt = null;
+            ResultSet rs = null;
+
+            stmt = conexao.prepareStatement("SELECT * FROM produtos WHERE categoria = ?");
+            stmt.setString(1, categoria);
+            rs = stmt.executeQuery();
+            while (rs.next()) {
+                Produto prt = new Produto();
+                prt.setIdProdutos(rs.getInt("idProdutos"));
+                prt.setNome(rs.getString("nome"));
+                prt.setImagem(rs.getBytes("imagem"));
+                prt.setCategoria(rs.getString("categoria"));
+                prt.setDescricao(rs.getString("descricao"));
+                prt.setPreco(rs.getFloat("preco"));
+                prt.setQuantidade(rs.getInt("quantidade"));
+                produto.add(prt);
+            }
+
+            rs.close();
+            stmt.close();
+            conexao.close();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return produto;
+    }
+
 }

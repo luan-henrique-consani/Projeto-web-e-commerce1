@@ -93,7 +93,11 @@ public class CadasrtoControlller extends HttpServlet {
             out.println("</script>");
         } else {
            usuarioDao.logar(usuario);
-           response.sendRedirect("./home");
+           if(Usuario.getIdUsuario() == 1){
+               response.sendRedirect("./cadastroProdutos");
+           }else{
+               response.sendRedirect("./home");
+           }
 
         }
 

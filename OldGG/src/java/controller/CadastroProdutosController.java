@@ -75,7 +75,7 @@ public class CadastroProdutosController extends HttpServlet {
         objProduto.setQuantidade(Integer.parseInt(request.getParameter("quantidade")));
         objProduto.setDescricao(request.getParameter("descricao"));
         objProdutoDao.create(objProduto);
-        response.sendRedirect("./home");
+        response.sendRedirect("./cadastroProdutos");
         
 
     }

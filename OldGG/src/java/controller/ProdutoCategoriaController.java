@@ -10,19 +10,20 @@ import java.io.PrintWriter;
 import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import model.DAO.ProdutoDAO;
-import model.DAO.UsuarioDAO;
 import model.bean.Produto;
-import model.bean.Usuario;
 
 /**
  *
- * @author Senai
+ * @author consa
  */
-public class ProdutosController extends HttpServlet {
+
+public class ProdutoCategoriaController extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -36,10 +37,11 @@ public class ProdutosController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         ProdutoDAO produto = new ProdutoDAO();
-        List<Produto> produtos = produto.leia();
+        String name = request.getParameter("name");
+        System.out.println(name);
+        List<Produto> produtos = produto.leia2(name);
         request.setAttribute("produtos", produtos);
-                String url = "/WEB-INF/jsp/index.jsp";
-        
+        String url = "/pages/categoriaprt.jsp";
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
         dispatcher.forward(request, response);
         
