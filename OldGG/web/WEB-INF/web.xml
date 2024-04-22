@@ -40,6 +40,10 @@
         <servlet-name>EnviarCarrinhoController</servlet-name>
         <servlet-class>controller.EnviarCarrinhoController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>CarrinhoController</servlet-name>
+        <servlet-class>controller.CarrinhoController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ProdutosController</servlet-name>
         <url-pattern>/home</url-pattern>
@@ -67,6 +71,10 @@
     <servlet-mapping>
         <servlet-name>EnviarCarrinhoController</servlet-name>
         <url-pattern>/enviar-carrinho</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CarrinhoController</servlet-name>
+        <url-pattern>/CarrinhoController</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -55,7 +55,7 @@ public class CadasrtoControlller extends HttpServlet {
         String action = request.getServletPath();
         if (action.equals("/criar")) {
             user(request, response);
-        }else{
+        } else {
             processRequest(request, response);
         }
 
@@ -86,19 +86,25 @@ public class CadasrtoControlller extends HttpServlet {
         PrintWriter out = response.getWriter();
         usuario.setEmail(request.getParameter("email"));
         usuario.setSenha(request.getParameter("senha"));
-        if (usuario.getEmail().trim().equals("")||usuario.getSenha().trim().equals("")) {
+        if (usuario.getEmail().trim().equals("") || usuario.getSenha().trim().equals("")) {
             out.println("<script type=\"text/javascript\">");
             out.println("alert('Por favor, preencha todos os campos.');");
             out.println("window.location.href = './cadastro-usu';");
             out.println("</script>");
         } else {
-           usuarioDao.logar(usuario);
-           if(Usuario.getIdUsuario() == 1){
-               response.sendRedirect("./cadastroProdutos");
-           }else{
-               response.sendRedirect("./home");
-           }
-
+            usuarioDao.logar(usuario);
+            if (Usuario.getIdUsuario() > 0) {
+                if (Usuario.getIdUsuario() == 1) {
+                    response.sendRedirect("./cadastroProdutos");
+                } else {
+                    response.sendRedirect("./home");
+                }
+            } else {
+                out.println("<script type=\"text/javascript\">");
+                out.println("alert('Por favor, faça o cadastro.');");
+                out.println("window.location.href = './cadastro-usu';");
+                out.println("</script>");
+            }
         }
 
     }

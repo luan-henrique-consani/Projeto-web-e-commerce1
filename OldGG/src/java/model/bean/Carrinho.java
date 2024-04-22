@@ -6,6 +6,7 @@
 package model.bean;
 
 import java.sql.Blob;
+import java.util.Base64;
 
 /**
  *
@@ -22,6 +23,13 @@ public class Carrinho {
     private int idProdutos;
 
     public Carrinho() {
+    }
+            public String getImagemBase64() {
+        if (imagemCarrinho != null) {
+            return Base64.getEncoder().encodeToString(imagemCarrinho);
+        } else {
+            return "";
+        }
     }
 
     public Carrinho(int idCarrinho, String nomeCarrinho, byte[] imagemCarrinho, String categoriaCarrinho, String descricaoCarrinho, float precoCarrinho, int quantidadeCarrinho, int idProdutos) {

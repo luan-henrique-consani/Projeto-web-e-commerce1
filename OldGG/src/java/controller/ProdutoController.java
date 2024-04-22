@@ -8,6 +8,7 @@ package controller;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.PrintWriter;
 import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -65,6 +66,7 @@ public class ProdutoController extends HttpServlet {
 
     protected void produto(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        PrintWriter out = response.getWriter();
         Part filePart = request.getPart("imagem");
         InputStream inputStream = filePart.getInputStream();
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
@@ -75,12 +77,17 @@ public class ProdutoController extends HttpServlet {
         }
         byte[] imageBytes = outputStream.toByteArray();
 
-
         objProduto.setNomeCarrinho(request.getParameter("nome"));
         objProduto.setPrecoCarrinho(Float.parseFloat(request.getParameter("preco")));
         objProduto.setDescricaoCarrinho(request.getParameter("descricao"));
         objProduto.setImagemCarrinho(imageBytes);
+        objProduto.setQuantidadeCarrinho(Integer.parseInt(request.getParameter("quantidade")));
+        objProduto.setIdProdutos(Integer.parseInt(request.getParameter("idProduto")));
         objProdutoDao.create(objProduto);
+        out.println("<script type=\"text/javascript\">");
+        out.println("alert('Comprafeita com sucesso.');");
+        out.println("window.location.href = './pages/produto.jsp';");
+        out.println("</script>");
         response.sendRedirect("./home");
 
     }

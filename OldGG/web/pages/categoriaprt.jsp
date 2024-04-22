@@ -59,7 +59,7 @@
                                   <a class="nav-link" href="./produto-categoria?name=Acessorios"> <i class="fa-solid fa-headset"></i>Acessórios</a>
                                 </li>
                               </ul>
-                              <a href="pages/loginecadastro.jsp" id="cars"><button class="btn btn-outline-success my-2 my-sm-0 carrinho" ><i class="fa-solid fa-cart-shopping"></i></button></a>
+                              <a href="./CarrinhoController" id="cars"><button class="btn btn-outline-success my-2 my-sm-0 carrinho" ><i class="fa-solid fa-cart-shopping"></i></button></a>
                               <form class="form-inline my-2 my-lg-0">
                                 <input class="form-control mr-sm-2 barra" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
                                 <button class="btn btn-outline-success my-2 my-sm-0 lupa" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>

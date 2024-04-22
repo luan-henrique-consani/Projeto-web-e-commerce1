@@ -26,7 +26,7 @@
             integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
             crossorigin="anonymous"></script>
             <link rel="stylesheet" href="style/header.css"> 
-            <link rel="stylesheet" href="style/main.css">
+            <link rel="stylesheet" href="style/main3.css">
             <link rel="stylesheet" href="style/footer.css">
     </head>
 
@@ -55,7 +55,7 @@
                       <a class="nav-link" href="./produto-categoria?name=Acessorios"> <i class="fa-solid fa-headset"></i>Acessórios</a>
                     </li>
                   </ul>
-                  <a href="pages/loginecadastro.jsp" id="cars"><button class="btn btn-outline-success my-2 my-sm-0 carrinho" ><i class="fa-solid fa-cart-shopping"></i></button></a>
+                  <a href="./CarrinhoController" id="cars"><button class="btn btn-outline-success my-2 my-sm-0 carrinho" ><i class="fa-solid fa-cart-shopping"></i></button></a>
                   <form class="form-inline my-2 my-lg-0">
                     <input class="form-control mr-sm-2 barra" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
                     <button class="btn btn-outline-success my-2 my-sm-0 lupa" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
@@ -70,12 +70,11 @@
         <h1>Suas Compras</h1>
 </div>
         <div class="container">
-          <c:forEach items="${produtos}" var="produto" >
-              <div id="${produto.idProdutos}" class="produto">
-                  <h2>${produto.nome}</h2>
-                  <img src="data:image/png;base64,${produto.imagemBase64}"  alt="${produto.nome}">
-                  <p>R$ ${produto.preco}</p>
-                  <a href="./ProdutoController?id=${produto.idProdutos}"><input type="submit" value="comprar"></a>
+          <c:forEach items="${carrinhos}" var="carrinho" >
+              <div id="${carrinho.idProdutos}" class="produto">
+                  <h2>${carrinho.nomeCarrinho}</h2>
+                  <img src="data:image/png;base64,${carrinho.imagemBase64}"  alt="${carrinho.nomeCarrinho}">
+                  <p>R$ ${carrinho.precoCarrinho}</p>
               </div>
           </c:forEach>
       </div>
