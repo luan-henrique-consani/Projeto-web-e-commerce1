@@ -38,7 +38,7 @@ document.querySelectorAll('.btn-comprar').forEach(btn => {
             if (!response.ok) {
                 throw new Error('Ocorreu um erro ao enviar o formulário.');
             }else{
-                alert('Comprafeita com sucesso.');
+                alert('Compra feita com sucesso.');
                 window.location.href = './home';
             }
            
