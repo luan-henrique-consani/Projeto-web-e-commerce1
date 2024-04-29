@@ -34,7 +34,7 @@ CREATE TABLE carrinho (
 idCarrinho INT AUTO_INCREMENT PRIMARY KEY,
 nome_carrinho VARCHAR(255) NOT NULL,
 imagem_carrinho longblob,
-categoria_carrinho VARCHAR(100) NOT NULL,
+categoria_carrinho VARCHAR(100),
 descricao_carrinho TEXT,
 preco_carrinho DECIMAL(10, 2) NOT NULL,
 quantidade_carrinho INT NOT NULL,
