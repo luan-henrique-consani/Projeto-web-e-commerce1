@@ -1,3 +1,4 @@
+@media(min-width:780px){
 * {
     margin: 0;
     padding: 0;
@@ -191,14 +192,26 @@ form.sign-up-form {
 .container.sign-up-mode .left-panel {
     pointer-events: all;
 }
+#voltar{
+    position: relative;
+    left: -46%;
+    font-size: 25px;
+    top: -5%;
+    color: rgb(37, 37, 37);
+    transition: all 0.2s ease-in-out;
+}
+#voltar:hover{
+    color: rgb(90, 90, 90);
+}
+}
 /*Responsive*/
-@media (max-width:779px) {
+@media(max-width:779px) {
     .container {
         width: 100vw;
         height: 100vh;
     }
 }
-@media (max-width:635px) {
+@media(max-width:635px) {
     .container::before {
         display: none;
     }
@@ -223,19 +236,8 @@ form.sign-up-form {
         margin-top: 30px;
     }
 }
-@media (max-width:320px) {
+@media(max-width:320px) {
     form {
         width: 90%;
     }
-}
-#voltar{
-    position: relative;
-    left: -46%;
-    font-size: 25px;
-    top: -5%;
-    color: rgb(37, 37, 37);
-    transition: all 0.2s ease-in-out;
-}
-#voltar:hover{
-    color: rgb(90, 90, 90);
 }

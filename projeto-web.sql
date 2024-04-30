@@ -8,14 +8,19 @@ nome VARCHAR(255) NOT NULL,
 senha VARCHAR(255) NOT NULL,
 email VARCHAR(255) NOT NULL,
 telefone VARCHAR(20) NOT NULL,
-cpf VARCHAR(14) NOT NULL
+cpf VARCHAR(14) NOT NULL,
+tipo_usuario INT
 );
 
 CREATE TABLE produtos (
 idProdutos INT AUTO_INCREMENT PRIMARY KEY,
 nome VARCHAR(255) NOT NULL,
 imagem longblob,
-categoria VARCHAR(100) NOT NULL,
+sub_img_1 longblob,
+sub_img_2 longblob,
+sub_img_3 longblob,
+categoria VARCHAR(100),
+sub_categoria VARCHAR(100),
 descricao TEXT,
 preco DECIMAL(10, 2) NOT NULL,
 quantidade INT NOT NULL
@@ -40,6 +45,14 @@ preco_carrinho DECIMAL(10, 2) NOT NULL,
 quantidade_carrinho INT NOT NULL,
 idProdutos INT,
 foreign key (idProdutos) references Produtos (idProdutos)
+);
+
+CREATE TABLE historico_produtos (
+    id INT PRIMARY KEY,
+    idProdutos INT,
+    acao VARCHAR(20),
+    data_hora TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    usuario VARCHAR(50)
 );
 
 DELIMITER $$
