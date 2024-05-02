@@ -48,11 +48,11 @@ foreign key (idProdutos) references Produtos (idProdutos)
 );
 
 CREATE TABLE historico_produtos (
-    id INT PRIMARY KEY,
-    idProdutos INT,
-    acao VARCHAR(20),
-    data_hora TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    usuario VARCHAR(50)
+id INT PRIMARY KEY,
+idProdutos INT,
+acao VARCHAR(20),
+data_hora TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+usuario VARCHAR(50)
 );
 
 DELIMITER $$

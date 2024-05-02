@@ -56,11 +56,9 @@
                     </li>
                   </ul>
                   <a href="./CarrinhoController" id="cars"><button class="btn btn-outline-success my-2 my-sm-0 carrinho" ><i class="fa-solid fa-cart-shopping"></i></button></a>
-                  <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2 barra" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
+                  <form class="form-inline my-2 my-lg-0" action="achar" enctype="multipart/form-data" method="post">
+                      <input class="form-control mr-sm-2 barra" type="search" placeholder="Pesquisar" aria-label="Pesquisar" name="nome">
                     <button class="btn btn-outline-success my-2 my-sm-0 lupa" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-
-
                   </form>
                 </div>
                 <a href="./cadastro-usu" id="user"><button class="btn btn-outline-success my-2 my-sm-0 conta" ><i class="fa-solid fa-user"></i></button></a>
