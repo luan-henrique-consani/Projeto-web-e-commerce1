@@ -33,7 +33,7 @@ public class CadasrtoControlller extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String nextPage = "/pages/loginecadastro.jsp";
+        String nextPage = "/WEB-INF/jsp/loginecadastro.jsp";
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextPage);
         dispatcher.forward(request, response);
     }

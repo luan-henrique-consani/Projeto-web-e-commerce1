@@ -37,11 +37,11 @@ public class ProdutoCategoriaController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         ProdutoDAO produto = new ProdutoDAO();
-        String name = request.getParameter("name");
-        System.out.println(name);
-        List<Produto> produtos = produto.leia2(name);
+        int id = Integer.parseInt(request.getParameter("id"));
+        System.out.println(id);
+        List<Produto> produtos = produto.leia2(id);
         request.setAttribute("produtos", produtos);
-        String url = "/pages/categoriaprt.jsp";
+        String url = "/WEB-INF/jsp/categoriaprt.jsp";
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
         dispatcher.forward(request, response);
         

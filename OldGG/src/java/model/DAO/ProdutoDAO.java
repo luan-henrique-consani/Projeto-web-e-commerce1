@@ -28,7 +28,7 @@ public class ProdutoDAO {
             stmt = conexao.prepareStatement("INSERT INTO produtos(nome, imagem, categoria, descricao, preco, quantidade)VALUES(?,?,?,?,?,?)");
             stmt.setString(1, produto.getNome());
             stmt.setBytes(2, produto.getImagem());
-            stmt.setString(3, produto.getCategoria());
+            stmt.setInt(3, produto.getCategoria());
             stmt.setString(4, produto.getDescricao());
             stmt.setFloat(5, produto.getPreco());
             stmt.setInt(6, produto.getQuantidade());
@@ -57,7 +57,7 @@ public class ProdutoDAO {
                 prt.setIdProdutos(rs.getInt("idProdutos"));
                 prt.setNome(rs.getString("nome"));
                 prt.setImagem(rs.getBytes("imagem"));
-                prt.setCategoria(rs.getString("categoria"));
+                prt.setCategoria(rs.getInt("categoria"));
                 prt.setDescricao(rs.getString("descricao"));
                 prt.setPreco(rs.getFloat("preco"));
                 prt.setQuantidade(rs.getInt("quantidade"));
@@ -89,7 +89,7 @@ public class ProdutoDAO {
                 prt.setIdProdutos(rs.getInt("idProdutos"));
                 prt.setNome(rs.getString("nome"));
                 prt.setImagem(rs.getBytes("imagem"));
-                prt.setCategoria(rs.getString("categoria"));
+                prt.setCategoria(rs.getInt("categoria"));
                 prt.setDescricao(rs.getString("descricao"));
                 prt.setPreco(rs.getFloat("preco"));
                 prt.setQuantidade(rs.getInt("quantidade"));
@@ -106,7 +106,7 @@ public class ProdutoDAO {
         return produto;
     }
 
-    public List<Produto> leia2(String categoria) {
+    public List<Produto> leia2(int categoria) {
         List<Produto> produto = new ArrayList<>();
         try {
             Connection conexao = Conexao.conectar();
@@ -114,14 +114,14 @@ public class ProdutoDAO {
             ResultSet rs = null;
 
             stmt = conexao.prepareStatement("SELECT * FROM produtos WHERE categoria = ?");
-            stmt.setString(1, categoria);
+            stmt.setInt(1, categoria);
             rs = stmt.executeQuery();
             while (rs.next()) {
                 Produto prt = new Produto();
                 prt.setIdProdutos(rs.getInt("idProdutos"));
                 prt.setNome(rs.getString("nome"));
                 prt.setImagem(rs.getBytes("imagem"));
-                prt.setCategoria(rs.getString("categoria"));
+                prt.setCategoria(rs.getInt("categoria"));
                 prt.setDescricao(rs.getString("descricao"));
                 prt.setPreco(rs.getFloat("preco"));
                 prt.setQuantidade(rs.getInt("quantidade"));
@@ -152,7 +152,7 @@ public class ProdutoDAO {
                 prt.setIdProdutos(rs.getInt("idProdutos"));
                 prt.setNome(rs.getString("nome"));
                 prt.setImagem(rs.getBytes("imagem"));
-                prt.setCategoria(rs.getString("categoria"));
+                prt.setCategoria(rs.getInt("categoria"));
                 prt.setDescricao(rs.getString("descricao"));
                 prt.setPreco(rs.getFloat("preco"));
                 prt.setQuantidade(rs.getInt("quantidade"));

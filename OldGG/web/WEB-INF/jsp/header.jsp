@@ -26,8 +26,6 @@
             integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
             crossorigin="anonymous"></script>
             <link rel="stylesheet" href="style/header.css"> 
-            <link rel="stylesheet" href="style/main3.css">
-            <link rel="stylesheet" href="style/footer.css">
     </head>
 
     <body>
@@ -46,13 +44,13 @@
                       <a class="nav-link" href="./home"><i class="fa-solid fa-house"></i>Home<span class="sr-only">(página atual)</span></a>
                     </li>
                     <li class="nav-item active">
-                      <a class="nav-link" href="./produto-categoria?name=Consoles"> <i class="fa-solid fa-gamepad"></i>Consoles</a>
+                      <a class="nav-link" href="./produto-categoria?id=1"> <i class="fa-solid fa-gamepad"></i>Consoles</a>
                     </li>
                     <li class="nav-item active">
-                      <a class="nav-link" href="./produto-categoria?name=Action Figure"><i class="fa-solid fa-person-walking"></i>Action figure</a>
+                      <a class="nav-link" href="./produto-categoria?id=2"><i class="fa-solid fa-person-walking"></i>Action figure</a>
                     </li>
                     <li class="nav-item active">
-                      <a class="nav-link" href="./produto-categoria?name=Acessorios"> <i class="fa-solid fa-headset"></i>Acessórios</a>
+                      <a class="nav-link" href="./produto-categoria?id=3"> <i class="fa-solid fa-headset"></i>Acessórios</a>
                     </li>
                   </ul>
                   <a href="./CarrinhoController" id="cars"><button class="btn btn-outline-success my-2 my-sm-0 carrinho" ><i class="fa-solid fa-cart-shopping"></i></button></a>
@@ -64,28 +62,5 @@
                 <a href="./cadastro-usu" id="user"><button class="btn btn-outline-success my-2 my-sm-0 conta" ><i class="fa-solid fa-user"></i></button></a>
               </nav>
         </header>
-    <main>
-        <h1>Suas Compras</h1>
-</div>
-        <div class="container">
-          <c:forEach items="${carrinhos}" var="carrinho" >
-              <div id="${carrinho.idProdutos}" class="produto">
-                  <h2>${carrinho.nomeCarrinho}</h2>
-                  <img src="data:image/png;base64,${carrinho.imagemBase64}"  alt="${carrinho.nomeCarrinho}">
-                  <p>R$ ${carrinho.precoCarrinho}</p>
-              </div>
-          </c:forEach>
-      </div>
-    </main>
-    <footer>
-      <div class="redes">
-        <a  href="https://www.instagram.com/luanconsani28/" class="btn btn-outline-succes my-2 my-sm-1 redes2" type="submit"><i class="fa-brands fa-instagram"></i></a>
-        <a  href="https://wa.me/5543991504447?text=Fala+com+pai" class="btn btn-outline-succes my-2 my-sm-1 redes2" type="submit"><i class="fa-brands fa-whatsapp"></i></a>
-        <a  href="https://www.linkedin.com/in/luan-henrique-consani-coelho-b9b66a219/" class="btn btn-outline-succes my-2 my-sm-1 redes2" type="submit"><i class="fa-brands fa-linkedin"></i></a> 
-        
-      </div>
-      <p>Todos direitos reservados a Luan Consani&copy;</p>
-    </footer>
-    </body>
 
     </html>

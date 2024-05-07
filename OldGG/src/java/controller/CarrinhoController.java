@@ -31,7 +31,7 @@ public class CarrinhoController extends HttpServlet {
          CarrinhoDAO produto = new CarrinhoDAO();
         List<Carrinho> carrinhos = produto.leia();
         request.setAttribute("carrinhos", carrinhos);
-        String url = "/pages/carrinho.jsp";
+        String url = "/WEB-INF/jsp/carrinho.jsp";
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
         dispatcher.forward(request, response);
         

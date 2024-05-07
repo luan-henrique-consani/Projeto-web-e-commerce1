@@ -41,7 +41,7 @@ public class ProdutoController extends HttpServlet {
         System.out.println(id);
         List<Produto> produtos = produto.leia1(id);
         request.setAttribute("produtos", produtos);
-        String url = "/pages/produto.jsp";
+        String url = "/WEB-INF/jsp/produto.jsp";
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
         dispatcher.forward(request, response);
     }

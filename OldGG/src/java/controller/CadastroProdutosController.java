@@ -9,6 +9,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.PrintWriter;
+import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
@@ -17,7 +18,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
+import model.DAO.CategoriaDAO;
 import model.DAO.ProdutoDAO;
+import model.bean.Categoria;
 import model.bean.Produto;
 
 /**
@@ -33,15 +36,18 @@ public class CadastroProdutosController extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
+        CategoriaDAO categoria = new CategoriaDAO();
+        List<Categoria> categorias = categoria.leia();
+       request.setAttribute("categoria", categorias);
+               String nextPage = "/WEB-INF/jsp/cadastroprodutos.jsp";
+        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextPage);
+        dispatcher.forward(request, response);
     }
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String nextPage = "/pages/cadastroprodutos.jsp";
-        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextPage);
-        dispatcher.forward(request, response);
+        processRequest(request, response);
     }
 
     @Override
@@ -70,7 +76,7 @@ public class CadastroProdutosController extends HttpServlet {
 
         objProduto.setImagem(imageBytes);
         objProduto.setNome(request.getParameter("nome"));
-        objProduto.setCategoria(request.getParameter("categoria"));
+        objProduto.setCategoria(Integer.parseInt(request.getParameter("categoria")));
         objProduto.setPreco(Float.parseFloat(request.getParameter("preco")));
         objProduto.setQuantidade(Integer.parseInt(request.getParameter("quantidade")));
         objProduto.setDescricao(request.getParameter("descricao"));

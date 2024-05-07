@@ -25,47 +25,22 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
             integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
             crossorigin="anonymous"></script>
-            <jsp:include page="header.jsp"></jsp:include>
-            <link rel="stylesheet" href="style/main.css">
+            <link rel="stylesheet" href="style/header.css"> 
+            <link rel="stylesheet" href="style/main3.css">
             <link rel="stylesheet" href="style/footer.css">
     </head>
 
     <body>
-
+           <jsp:include page="header.jsp"></jsp:include>
     <main>
-
-        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img class="d-block w-100" src="assets/1.png" alt="Primeiro Slide">
-    </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src="assets/2.png" alt="Segundo Slide">
-    </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src="assets/3.png" alt="Terceiro Slide">
-    </div>
-          <div class="carousel-item">
-      <img class="d-block w-100" src="assets/4.png" alt="Terceiro Slide">
-    </div>
-  </div>
-  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Anterior</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Próximo</span>
-  </a>
+        <h1>Suas Compras</h1>
 </div>
-
         <div class="container">
-          <c:forEach items="${produtos}" var="produto" >
-              <div id="${produto.idProdutos}" class="produto">
-                  <h2>${produto.nome}</h2>
-                  <img src="data:image/png;base64,${produto.imagemBase64}"  alt="${produto.nome}">
-                  <p>R$ ${produto.preco}</p>
-                  <a href="./ProdutoController?id=${produto.idProdutos}"><input type="submit" value="comprar"></a>
+          <c:forEach items="${carrinhos}" var="carrinho" >
+              <div id="${carrinho.idProdutos}" class="produto">
+                  <h2>${carrinho.nomeCarrinho}</h2>
+                  <img src="data:image/png;base64,${carrinho.imagemBase64}"  alt="${carrinho.nomeCarrinho}">
+                  <p>R$ ${carrinho.precoCarrinho}</p>
               </div>
           </c:forEach>
       </div>
@@ -75,7 +50,6 @@
         <a  href="https://www.instagram.com/luanconsani28/" class="btn btn-outline-succes my-2 my-sm-1 redes2" type="submit"><i class="fa-brands fa-instagram"></i></a>
         <a  href="https://wa.me/5543991504447?text=Fala+com+pai" class="btn btn-outline-succes my-2 my-sm-1 redes2" type="submit"><i class="fa-brands fa-whatsapp"></i></a>
         <a  href="https://www.linkedin.com/in/luan-henrique-consani-coelho-b9b66a219/" class="btn btn-outline-succes my-2 my-sm-1 redes2" type="submit"><i class="fa-brands fa-linkedin"></i></a> 
-
         
       </div>
       <p>Todos direitos reservados a Luan Consani&copy;</p>
