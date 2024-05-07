@@ -29,13 +29,14 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
                 integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
+                <jsp:include page="header.jsp"></jsp:include>
         <link rel="stylesheet" href="style/header.css">
         <link rel="stylesheet" href="style/produto.css">
         <link rel="stylesheet" href="style/footer.css">
     </head>
 
     <body>
-        <jsp:include page="header.jsp"></jsp:include>
+
     <main>
         <div class="container">
             <c:forEach items="${produtos}" var="produto">

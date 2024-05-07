@@ -39,6 +39,7 @@ public class CarrinhoDAO {
                 cro.setPrecoCarrinho(rs.getFloat("preco_carrinho"));
                 cro.setQuantidadeCarrinho(rs.getInt("quantidade_carrinho"));
                 cro.setIdProdutos(rs.getInt("idProdutos"));
+                cro.setIdUsuario(rs.getInt("idUsuario"));
                 carrinho.add(cro);
             }
 

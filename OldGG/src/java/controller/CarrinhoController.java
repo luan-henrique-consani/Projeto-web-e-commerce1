@@ -28,7 +28,7 @@ public class CarrinhoController extends HttpServlet {
     CarrinhoDAO objProdutoDao = new CarrinhoDAO();
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-         CarrinhoDAO produto = new CarrinhoDAO();
+        CarrinhoDAO produto = new CarrinhoDAO();
         List<Carrinho> carrinhos = produto.leia();
         request.setAttribute("carrinhos", carrinhos);
         String url = "/WEB-INF/jsp/carrinho.jsp";

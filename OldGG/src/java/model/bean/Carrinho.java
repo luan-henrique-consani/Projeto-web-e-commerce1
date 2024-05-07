@@ -21,6 +21,7 @@ public class Carrinho {
     private float precoCarrinho;
     private int quantidadeCarrinho;
     private int idProdutos;
+    private int idUsuario;
 
     public Carrinho() {
     }
@@ -32,7 +33,7 @@ public class Carrinho {
         }
     }
 
-    public Carrinho(int idCarrinho, String nomeCarrinho, byte[] imagemCarrinho, String categoriaCarrinho, String descricaoCarrinho, float precoCarrinho, int quantidadeCarrinho, int idProdutos) {
+    public Carrinho(int idCarrinho, String nomeCarrinho, byte[] imagemCarrinho, String categoriaCarrinho, String descricaoCarrinho, float precoCarrinho, int quantidadeCarrinho, int idProdutos, int idUsuario) {
         this.idCarrinho = idCarrinho;
         this.nomeCarrinho = nomeCarrinho;
         this.imagemCarrinho = imagemCarrinho;
@@ -41,6 +42,7 @@ public class Carrinho {
         this.precoCarrinho = precoCarrinho;
         this.quantidadeCarrinho = quantidadeCarrinho;
         this.idProdutos = idProdutos;
+        this.idUsuario = idUsuario;
     }
 
     public int getIdCarrinho() {
@@ -105,6 +107,14 @@ public class Carrinho {
 
     public void setIdProdutos(int idProdutos) {
         this.idProdutos = idProdutos;
+    }
+
+    public int getIdUsuario() {
+        return idUsuario;
+    }
+
+    public void setIdUsuario(int idUsuario) {
+        this.idUsuario = idUsuario;
     }
 
     

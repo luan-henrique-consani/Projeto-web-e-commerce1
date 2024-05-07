@@ -26,13 +26,14 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
                 integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
+                <jsp:include page="header.jsp"></jsp:include>
 
 
 
     </head>
 
     <body>
-        <jsp:include page="header.jsp"></jsp:include>
+
         <main>
             <h2>Cadastrar produtos!</h2>
             <form action="criarprt" enctype="multipart/form-data" method="post" name="frmProduct">
