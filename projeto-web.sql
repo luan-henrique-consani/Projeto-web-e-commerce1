@@ -11,7 +11,10 @@ telefone VARCHAR(20) NOT NULL,
 cpf VARCHAR(14) NOT NULL,
 tipo_usuario INT
 );
-
+CREATE TABLE categoria(
+idCategoria INT AUTO_INCREMENT PRIMARY KEY,
+nome VARCHAR(45)
+);
 CREATE TABLE produtos (
 idProdutos INT AUTO_INCREMENT PRIMARY KEY,
 nome VARCHAR(255) NOT NULL,
@@ -19,12 +22,14 @@ imagem longblob,
 sub_img_1 longblob,
 sub_img_2 longblob,
 sub_img_3 longblob,
-categoria VARCHAR(100),
+categoria INT,
 sub_categoria VARCHAR(100),
 descricao TEXT,
 preco DECIMAL(10, 2) NOT NULL,
-quantidade INT NOT NULL
+quantidade INT NOT NULL,
+FOREIGN KEY (categoria) REFERENCES categoria (idCategoria)
 );
+
 
 CREATE TABLE estoque (
 idEstoque INT AUTO_INCREMENT PRIMARY KEY,
@@ -67,3 +72,4 @@ END$$
 DELIMITER ;
 
 insert into usuario(nome, senha, email, telefone, cpf) values('Admin','Admin1234','adm@gmail.com','43 91234-567','123.456.789-10');
+insert into categoria (nome) values ('Consoles'),('Action Figure'),('Acessorios');
