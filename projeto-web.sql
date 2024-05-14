@@ -50,6 +50,7 @@ preco_carrinho DECIMAL(10, 2) NOT NULL,
 quantidade_carrinho INT NOT NULL,
 idProdutos INT,
 idUsuario int,
+total DECIMAL(10, 2),
 foreign key (idUsuario) references Usuario (idUsuario),
 foreign key (idProdutos) references Produtos (idProdutos)
 );
@@ -75,7 +76,4 @@ DELIMITER ;
 
 insert into usuario(nome, senha, email, telefone, cpf) values('Admin','Admin1234','adm@gmail.com','43 91234-567','123.456.789-10');
 insert into categoria (nome) values ('Consoles'),('Action Figure'),('Acessorios');
-
-
-delete from carrinho where idCarrinho = 1;
-drop database projeto_web;
+SELECT SUM(p.preco * c.quantidade_carrinho) AS total FROM produtos p INNER JOIN carrinho c ON p.idProdutos = c.idProdutos;
